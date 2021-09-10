@@ -1,0 +1,1 @@
+header image size = 200x200
