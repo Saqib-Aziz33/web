@@ -13,7 +13,7 @@ var typed = new Typed('.element', {
     smartBackspace: true, // Default value
     loop: false,
     //loopCount: Infinity,
-    typeSpeed: 20
+    typeSpeed: 30
 });
 
 
