@@ -1,36 +1,70 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 
+/* variables */
 :root{
-    --clr-light-blue: #E2F7F9;
-    --clr-light-blue-2: #F7FDFD;
-    /* --clr-cream: #ebe9e9; */
-    --clr-white-60: rgba(255, 255, 255, 0.6);
-    --clr-blue: #4c6d86;
-    --clr-red: #FF2442;
+    /* dynamic colors */
+    --clr-light: #ffffff;
+    --clr-dark: #000814;
     --clr-orange: #fa983a;
-    --clr-brown: #3d3d3dCC;
+    --clr-blue: #4c6d86;
+    /* static color */
+    --clr--s-light: #ffffff;
+    --clr--s-dark: #000814;
+    /* low op dynamic */
+    --clr-dark-op-mid: #000814A6;
+    --clr-dark-op-low: #00081480;
     /* fonts */
-    --ff-ssp: 'Source Sans Pro', sans-serif;
-    /* font weights */
-    --fw-4: 400;
-    --fw-6: 600;
-    --fw-7: 700;
+    --ff-lato: 'Lato', sans-serif;
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-bold: 700;
+    --fw-bolder: 900;
+    /* opacity */
+    --op-light: 0.5;
+    --op-normal: 0.6;
+    --op-regular: 0.8;
     /* transition */
     --transition: all 0.3s ease;
-    /* font size */
-    --fs-p: 1.1rem;
-    --fs-p1: 1.4rem;
-    /* opacity */
-    --opa-mid: 0.8;
 }
 
 body{
-    font-family: var(--ff-ssp);
-    color: var(--clr-brown);
-    background-color: var(--clr-light-blue-2);
+    line-height: 1.6;
+    background-color: var(--clr-light);
+    color: var(--clr-dark);
+    transition: background 0.5s ease;
 }
-p{
-    font-size: var(--fs-p);
+
+/* dark theme */
+.dark-theme{
+    --clr-light: #000814;
+    --clr-dark: #ffffff;
+    --clr-dark-op-mid: #ffffff;
+    --clr-dark-op-low: #ffffff;
+    --clr-orange: #ffc300;
+    --clr-blue: #001d3d;
+}
+#theme-btn{
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--clr-light);
+    background-color: var(--clr-dark);
+    padding: 5px 20px;
+    opacity: var(--op-regular);
+    border-radius: 10px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, 0.2);
+    animation-name: theme-btn-animation;
+    animation-duration: 2s;
+    animation-delay: 0.5s;
+    animation-iteration-count: infinite;
+}
+@keyframes theme-btn-animation{
+    0%{opacity: 0.8;}
+    50%{opacity: 0.5;}
+    100%{opacity: 0.8;}
 }
 
 /* utilities */
@@ -79,26 +113,31 @@ p{
     padding: 0.5em 3em;
 }
 
+
 /* header */
-.header{
-    background-color: var(--clr-light-blue);
+.top-header{
     height: 150px;
-    width: 100%;
-}
-.header-img-wrapper{
-    display: flex;
-    justify-content: center;
-    height: 100px;
+    background-color: var(--clr-blue);
+    opacity: 0.3;
 }
 .header-img{
-    height: 200px;
+    height: 100px;
+}
+.header-img img{
     border-radius: 50%;
+    display: block;
+    margin: auto;
     position: relative;
     top: -100px;
 }
 
-
+/* intro */
+.intro{
+    text-align: center;
+    color: var(--clr-dark-op-mid);
+}
 .social-icons i{
+    color: var(--clr-dark);
     opacity: 0.6;
     font-size: 1.2rem;
     transition: var(--transition);
@@ -107,66 +146,60 @@ p{
     opacity: 1;
 }
 
-
-/* skills section */
-#skills{
+/* skills */
+.skills{
     background-color: var(--clr-blue);
-    color: white;
     padding: 6rem 2rem;
+    color: var(--clr--s-light);
 }
-#skills i{
+.skills i{
     color: var(--clr-orange);
     font-size: 3rem;
     margin: 0.2em 0;
 }
-#skills h4{
+.skills h4{
     font-weight: var(--fw-6);
 }
-#skills p{
-    color: var(--clr-white-60);
+.skills p{
+    opacity: var(--op-normal);
     margin-bottom: 0.1em;
     font-size: var(--fs-p);
 }
 
 
-/* work section */
-#work .heading h4{
+/* work */
+.work .heading h4{
     font-weight: bold;
     color: var(--clr-orange);
 }
-#work p{
-    font-size: var(--fs-p1);
-    opacity: var(--opa-mid);
+.work p{
+    font-size: 1.2rem;
+    color: var(--clr-dark-op-low);
 }
-#work .title{
+.work .title{
     font-weight: bold;
     text-transform: uppercase;
-    opacity: var(--opa-mid);
+    color: var(--clr-dark-op-low);
 }
-#work .devices{
+.work .devices{
     color: var(--clr-orange);
     font-size: var(--fs-p);
     font-weight: bold;
 }
-#work .devices i{
+.work .devices i{
     margin-right: 0.5em;
 }
-#work{
-    transition: filter 0.3s ease;
-}
 
 
+/* footer */
 /* promotion section */
-#promotion{
+.promotion{
     background-color: var(--clr-orange);
     color: white;
     padding: 6rem 2rem;
 }
 
 /* footer */
-footer{
-    background-color: var(--clr-light-blue);
-}
 footer .logo{
     background-color: var(--clr-orange);
     color: white;
