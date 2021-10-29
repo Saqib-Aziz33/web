@@ -2,10 +2,12 @@
 const navToggler = document.querySelector('.nav-toggler')
 const showNav = document.querySelector('.my-nav-links')
 const portfolioNavigationBtn = document.querySelector('.portfolio-navigation-btn')
+const mainBody = document.getElementById('main')
 
 navToggler.addEventListener('click', () => {
     showNav.classList.toggle('active')
     portfolioNavigationBtn.classList.toggle('in-active')
+    mainBody.classList.toggle('blur')
 })
 
 

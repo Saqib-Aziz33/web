@@ -3,6 +3,7 @@
 :root{
     /* colors */
     --clr-primary: #2ec4b6;
+    --clr-primary-40: #2ec4b64D;
     --clr-secondary: #cbf3f0;
     --clr-white: #ffffff;
     --clr-black: #353535;
@@ -19,8 +20,9 @@ body.dark-theme{
     --clr-secondary: #353535;
 }
 
-
-
+#main.blur{
+    filter: blur(5px);
+}
 
 
 /* utilities */
@@ -45,6 +47,16 @@ body.dark-theme{
 }
 .table{
     color: var(--clr-black);
+}
+.form-control{
+    outline: none;
+    border-color: 2px solid transparent;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+}
+.form-control:focus{
+    box-shadow: none;
+    border-color: black;
 }
 
 
@@ -207,7 +219,7 @@ nav a{
 
 
 /* portfolio */
-#backend{
+#frontend{
     display: none;
 }
 #portfolio .nav-link{
@@ -226,7 +238,27 @@ nav a{
 footer{
     box-shadow: -1px -5px 20px 0px rgba(0,0,0,0.1);
 }
+.fa{
+    color: var(--clr-black);
+}
 
+
+
+/* contact */
+.bar-1, .bar-2, .bar-3{
+    background-color: var(--clr-secondary);
+    height: 5px;
+    margin: auto;
+}
+.bar-1{
+    max-width: 400px;
+}
+.bar-2{
+    max-width: 200px;
+}
+.bar-3{
+    max-width: 100px;
+}
 
 
 
@@ -248,18 +280,7 @@ footer{
         left: 0;
         right: 0;
         
-        background: hsla(174, 62%, 47%, 1);
-
-background: linear-gradient(90deg, hsla(174, 62%, 47%, 1) 0%, hsla(176, 62%, 87%, 1) 100%);
-
-background: -moz-linear-gradient(90deg, hsla(174, 62%, 47%, 1) 0%, hsla(176, 62%, 87%, 1) 100%);
-
-background: -webkit-linear-gradient(90deg, hsla(174, 62%, 47%, 1) 0%, hsla(176, 62%, 87%, 1) 100%);
-
-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#2EC4B6", endColorstr="#CBF3F0", GradientType=1 );
-
-        background-size: cover;
-        background-repeat: no-repeat;
+        background-color: var(--clr-primary-40);
         z-index: 4;
         flex-direction: column;
         justify-content: center;
@@ -270,6 +291,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#2EC4B6", en
     }
     nav a{
         color: var(--clr-black);
+        font-weight: 800;
     }
     nav ul.active{
         top: 0;
