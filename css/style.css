@@ -24,7 +24,7 @@ body.dark-theme{
 }
 
 #main.blur{
-    filter: blur(2px);
+    filter: blur(4px);
 }
 
 
@@ -116,6 +116,15 @@ nav a:hover, nav a:focus{
     cursor: pointer;
     height: 40px;
     display: none;
+}
+.nav-toggler.de-active{
+    display: none;
+}
+.nav-toggler-close{
+    display: none;
+}
+.nav-toggler-close.active{
+    display: block;
 }
 
 #dark-theme-toggler{

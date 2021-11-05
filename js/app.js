@@ -1,13 +1,23 @@
 //navbar logic
 const navToggler = document.querySelector('.nav-toggler')
+const navTogglerClose = document.querySelector('.nav-toggler-close')
 const showNav = document.querySelector('.my-nav-links')
 const portfolioNavigationBtn = document.querySelector('.portfolio-navigation-btn')
 const mainBody = document.getElementById('main')
 
 navToggler.addEventListener('click', () => {
-    showNav.classList.toggle('active')
-    portfolioNavigationBtn.classList.toggle('in-active')
-    mainBody.classList.toggle('blur')
+    showNav.classList.add('active')
+    portfolioNavigationBtn.classList.add('in-active')
+    mainBody.classList.add('blur')
+    navToggler.classList.add('de-active')
+    navTogglerClose.classList.add('active')
+})
+navTogglerClose.addEventListener('click', () => {
+    showNav.classList.remove('active')
+    portfolioNavigationBtn.classList.remove('in-active')
+    mainBody.classList.remove('blur')
+    navToggler.classList.remove('de-active')
+    navTogglerClose.classList.remove('active')
 })
 
 
